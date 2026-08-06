@@ -1,3 +1,4 @@
+import 'package:app_rich_and_morty/colors.dart';
 import 'package:app_rich_and_morty/models/character.model.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,12 @@ class DetailsCharacterPage extends StatelessWidget {
             // floating: true,
             collapsedHeight: 60,
             expandedHeight: 280,
+            iconTheme: IconThemeData(
+              color: getContrastingTextColor(
+                character.color,
+                defaultLightColor: Colors.black,
+              ),
+            ),
             flexibleSpace: FlexibleSpaceBar(
               background: Hero(
                 tag: ValueKey(character.id),
@@ -47,7 +54,15 @@ class DetailsCharacterPage extends StatelessWidget {
                     spacing: 10,
                     children: [
                       Chip(
-                        label: Text(character.status),
+                        label: Text(
+                          character.status,
+                          style: TextStyle(
+                            color: getContrastingTextColor(
+                              character.color,
+                              defaultLightColor: Colors.black87,
+                            ),
+                          ),
+                        ),
                         backgroundColor: character.color,
                         shape: StadiumBorder(),
                         padding: EdgeInsets.only(
@@ -58,7 +73,15 @@ class DetailsCharacterPage extends StatelessWidget {
                         ),
                       ),
                       Chip(
-                        label: Text(character.species),
+                        label: Text(
+                          character.species,
+                          style: TextStyle(
+                            color: getContrastingTextColor(
+                              character.color,
+                              defaultLightColor: Colors.black87,
+                            ),
+                          ),
+                        ),
                         backgroundColor: character.color,
                         shape: StadiumBorder(),
                         padding: EdgeInsets.only(
@@ -69,7 +92,15 @@ class DetailsCharacterPage extends StatelessWidget {
                         ),
                       ),
                       Chip(
-                        label: Text(character.gender),
+                        label: Text(
+                          character.gender,
+                          style: TextStyle(
+                            color: getContrastingTextColor(
+                              character.color,
+                              defaultLightColor: Colors.black87,
+                            ),
+                          ),
+                        ),
                         backgroundColor: character.color,
                         shape: StadiumBorder(),
                         padding: EdgeInsets.only(

@@ -60,6 +60,7 @@ class _CharacterCardState extends State<CharacterCard> {
   @override
   Widget build(BuildContext context) {
     final character = widget.character;
+    final textColor = getContrastingTextColor(character.color);
 
     return InkWell(
       key: widget.isGrid ? const Key("gridCard") : const Key("listCard"),
@@ -79,7 +80,10 @@ class _CharacterCardState extends State<CharacterCard> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text("${character.id}"),
+                    Text(
+                      "${character.id}",
+                      style: TextStyle(color: textColor),
+                    ),
                     Hero(
                       tag: ValueKey(character.id),
                       child: CachedNetworkImage(
@@ -93,7 +97,7 @@ class _CharacterCardState extends State<CharacterCard> {
                       character.name,
                       style: TextStyle(
                         fontSize: 20,
-                        color: primaryColor,
+                        color: textColor,
                         fontWeight: FontWeight.w500,
                       ),
                       maxLines: 1,
@@ -127,7 +131,7 @@ class _CharacterCardState extends State<CharacterCard> {
                               character.name,
                               style: TextStyle(
                                 fontSize: 20,
-                                color: primaryColor,
+                                color: textColor,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
@@ -149,7 +153,7 @@ class _CharacterCardState extends State<CharacterCard> {
                                   child: Text(
                                     "${character.status} - ${character.species}",
                                     style: TextStyle(
-                                      color: primaryColor,
+                                      color: textColor,
                                       fontSize: 16,
                                     ),
                                     overflow: TextOverflow.ellipsis,
@@ -162,7 +166,7 @@ class _CharacterCardState extends State<CharacterCard> {
                             Text(
                               character.gender,
                               style: TextStyle(
-                                color: primaryColor,
+                                color: textColor,
                                 fontSize: 16,
                               ),
                             ),
@@ -170,9 +174,9 @@ class _CharacterCardState extends State<CharacterCard> {
                               alignment: Alignment.centerRight,
                               child: Text(
                                 "${character.id}",
-                                style: const TextStyle(
+                                style: TextStyle(
                                   fontSize: 16,
-                                  color: primaryColor,
+                                  color: textColor,
                                 ),
                               ),
                             ),
