@@ -1,5 +1,7 @@
 # Rick and Morty App
 
+🇧🇷 Leia isto em [Português](README.md)
+
 Mobile application developed in Flutter to explore characters from the **Rick and Morty** universe, consuming data from the official REST API.
 
 ## 📝 About the Project
