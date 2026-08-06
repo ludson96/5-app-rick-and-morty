@@ -34,7 +34,10 @@ class _CharacterCardState extends State<CharacterCard> {
       if (widget.character.color != Colors.white) return;
 
       final palette = await PaletteGeneratorMaster.fromImageProvider(
-        NetworkImage(widget.character.image),
+        ResizeImage(
+          CachedNetworkImageProvider(widget.character.image),
+          width: 50,
+        ),
       );
 
       if (mounted && palette.dominantColor != null) {
