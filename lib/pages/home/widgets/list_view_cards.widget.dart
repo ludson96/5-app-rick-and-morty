@@ -23,7 +23,11 @@ class ListViewCards extends StatelessWidget {
           itemCount: store.filteredCharacters.length,
           itemBuilder: (ctx, index) {
             final character = store.filteredCharacters[index];
-            return CharacterCard(store: store, character: character);
+            return CharacterCard(
+              key: ValueKey(character.id),
+              store: store,
+              character: character,
+            );
           },
         );
       },

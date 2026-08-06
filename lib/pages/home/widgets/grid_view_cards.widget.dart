@@ -30,6 +30,7 @@ class GridViewCards extends StatelessWidget {
           itemBuilder: (ctx, index) {
             final character = store.filteredCharacters[index];
             return CharacterCard(
+              key: ValueKey(character.id),
               store: store,
               character: character,
               isGrid: true,

@@ -29,6 +29,14 @@ class _CharacterCardState extends State<CharacterCard> {
     _extractColor();
   }
 
+  @override
+  void didUpdateWidget(covariant CharacterCard oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.character.id != widget.character.id) {
+      _extractColor();
+    }
+  }
+
   Future<void> _extractColor() async {
     try {
       if (widget.character.color != Colors.white) return;

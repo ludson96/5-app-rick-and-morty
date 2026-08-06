@@ -51,7 +51,11 @@ abstract class HomeStoreBase with Store {
     } else {
       page += 1;
     }
-    character.addAll(characterResponse.results);
+    for (final newChar in characterResponse.results) {
+      if (!character.any((c) => c.id == newChar.id)) {
+        character.add(newChar);
+      }
+    }
 
     isLoading = false;
   }
