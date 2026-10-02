@@ -28,7 +28,7 @@ O **Rick and Morty App** é uma aplicação mobile construída para proporcionar
 
 ## 🖼️ Preview
 
-<img src="assets/images/lista-de-compras.gif" alt="Demonstração do App" width="300"/>
+<img src="assets/images/rick-and-morty.gif" alt="Demonstração do App" width="300"/>
 
 ## ⚡ API Endpoints
 
